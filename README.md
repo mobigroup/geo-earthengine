@@ -1,11 +1,6 @@
-# Google Earth Engine raster to BigQuery SQL convertion project
+# Google Earth Engine raster to BigQuery CSV convertion project
 
-To extract big rasters like to dozens of gygabytes each from Google Earth Engine (GEE) that's required to have enough RAM+SWAP space for rasters fetching.
-Per-chunk downloading process doesn't require lots of memory while there are no network or server errors. Otherwise, memory
-intensive process of reorginizing downloaded chunks and re-downloading missed ones is using. Usually, we have 1-2 transfer
-error for every 10 GB of downloaded rasters. 32 GB of RAM+SWAP is the right value for the scripts below where raster cache
-size is equal to 30 000 MB (GDAL_CACHEMAX=30000). For 3 GB RAM plus 30 GB SWAP we are able to download 500 GB rasters
-in 12-24 hours.
+Free data catalog and cloud processing system Google Earth Engine (GEE) provides a lot of of geospatial datasets. This project uses a chunked downloading to extract big rasters, even dozens of gigabyte each from Google Earth Engine. For an example, that is possible to download 500 GB raster in 12-24 hours.
 
 For Google Earth Engine (GEE) access the service account key required (it's named /root/gee-export.json in the scripts), to create your own one
 follow the link [Create and register a service account to use Earth Engine](https://developers.google.com/earth-engine/guides/service_account)
